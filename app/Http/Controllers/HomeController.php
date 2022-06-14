@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $count_emple = DB::table('empleados')->count();
+        $count_comp = DB::table('companies')->count();
+
+
+        return view('home',['count_comp' => $count_comp, 'count_emple' =>$count_emple]);
     }
 }

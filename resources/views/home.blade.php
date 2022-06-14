@@ -21,6 +21,7 @@
                                     <strong>Total de compañias:</strong>
                                     <br/>
                                     <br/>
+                                    <span>{{$count_comp}}</span>
                                 </div>
                             </div>
                         </div>
@@ -31,6 +32,7 @@
                                     <strong>Total de empleados:</strong>
                                     <br/>
                                     <br/>
+                                    <span>{{$count_emple}}</span>
                                 </div>
                             </div>
                         </div>

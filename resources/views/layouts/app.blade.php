@@ -53,6 +53,9 @@
                             @endif
                         @else
                         <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/home') }}">{{ __('Dashboard') }}</a>
+                                </li>
+                        <li class="nav-item">
                                     <a class="nav-link" href="{{ route('companies.index') }}">{{ __('Compañias') }}</a>
                                 </li>
                                 <li class="nav-item">
