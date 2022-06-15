@@ -17,7 +17,7 @@ class EmpleadosController extends Controller
     public function index()
     {
         //
-        $empleados = DB::table('empleados')->get();
+        $empleados = DB::table('empleados')->select('empleados.id', 'empleados.nombre as empleado_nombre', 'apellidos', 'empleados.correo', 'telefono','companies.nombre')->leftJoin('companies', 'empleados.company_id', '=', 'companies.id')->simplePaginate(10);
         return view('empleados.index',['empleados'=>$empleados]);
     }
 
@@ -28,9 +28,10 @@ class EmpleadosController extends Controller
      */
     public function create()
     {
+        $companias = DB::table('companies')->get();
         //
         $user=Auth::user();
-        return view('empleados.create',['user'=>$user,'title'=>'Agregar empleado']);
+        return view('empleados.create',['user'=>$user,'title'=>'Agregar empleado','companias'=>$companias]);
     }
 
     /**
@@ -68,9 +69,10 @@ class EmpleadosController extends Controller
      */
     public function edit($id)
     {
+        $companias = DB::table('companies')->get();
         //
         $empleado=empleado::find($id);
-        return view('empleados.edit',compact('empleado'));
+        return view('empleados.edit',['empleado'=>$empleado,'companias'=>$companias]);
     }
 
     /**

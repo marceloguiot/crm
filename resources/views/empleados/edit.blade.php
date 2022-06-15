@@ -51,7 +51,11 @@
                       <label for="company">Compañia</label>
                       <select name="company_id" class="form-control" value="{{$empleado->company_id}}" required>
                         <option  value="">--Elegir compañia--</option>
-                        <option  value="7">--Elegir compañia--</option>
+                        @foreach($companias as $com)
+                        
+                        <option value="{{$com->id}}" @if($com->id === $empleado->company_id) selected @endif>{{$com->nombre}}</option>
+
+                        @endforeach
                    
                       </select>
                      

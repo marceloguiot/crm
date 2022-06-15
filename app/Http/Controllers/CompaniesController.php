@@ -17,7 +17,7 @@ class CompaniesController extends Controller
     public function index()
     {
         //
-        $companies = DB::table('companies')->get();
+        $companies = DB::table('companies')->simplePaginate(10);
         return view('companies.index',['companies'=>$companies]);
     }
 

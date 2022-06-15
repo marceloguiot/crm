@@ -25,9 +25,9 @@
                         @foreach ($empleados as $com)
                         <tr>
                            <td>{{$key++}}</td>
-                           <td>{{@$com->nombre}}</td>
+                           <td>{{@$com->empleado_nombre}}</td>
                            <td>{{@$com->apellidos}}</td>
-                           <td>{{@$com->compañia}}</td>
+                           <td>{{@$com->nombre}}</td>
                            <td>{{@$com->correo}}</td>
                            <td>{{@$com->telefono}}</td>
                            <td>
@@ -51,6 +51,9 @@
                         @endif
                      </tbody>
                   </table>
+                  
+                  {!! $empleados->links() !!}
+                  
                  
                </div>
 </div>
