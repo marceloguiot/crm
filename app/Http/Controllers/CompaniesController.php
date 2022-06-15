@@ -41,7 +41,14 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-        $path = $request->file('logo')->store('public');
+        if($request->hasFile('logo'))
+        {
+            $path = $request->file('logo')->store('public');
+        }
+        else
+        {
+            $path = "";
+        }
               
         //
         $this->validate($request,[ 'nombre'=>'required']);
@@ -84,7 +91,14 @@ class CompaniesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $path = $request->file('logo')->store('public');
+        if($request->hasFile('logo'))
+        {
+            $path = $request->file('logo')->store('public');
+        }
+        else
+        {
+            $path = "";
+        }
         //
         $this->validate($request,[ 'nombre'=>'required', 'correo'=>'required', 'pagina'=>'required']);
         $data = $request->all();
