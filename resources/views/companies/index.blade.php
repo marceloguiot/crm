@@ -26,7 +26,7 @@
                            <td>{{$key++}}</td>
                            <td>{{@$com->nombre}}</td>
                            <td>{{@$com->correo}}</td>
-                           <td>{{@$com->logo}}</td>
+                           <td><img src="{{url($com->logo)}}"/></td>
                            <td >
                               {{@$com->pagina}}
                            </td>

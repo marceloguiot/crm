@@ -41,9 +41,13 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
+        $path = $request->file('logo')->store('public');
+              
         //
-        $this->validate($request,[ 'nombre'=>'required', 'correo'=>'required', 'pagina'=>'required']);
-        Company::create($request->all());
+        $this->validate($request,[ 'nombre'=>'required']);
+        $data = $request->all();
+        $data['logo'] = $path;
+        Company::create($data);
         return redirect()->route('companies.index')->with('success','Registro creado satisfactoriamente');
     }
 
@@ -80,10 +84,12 @@ class CompaniesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $path = $request->file('logo')->store('public');
         //
         $this->validate($request,[ 'nombre'=>'required', 'correo'=>'required', 'pagina'=>'required']);
-
-        company::find($id)->update($request->all());
+        $data = $request->all();
+        $data['logo'] = $path;
+        company::find($id)->update($data);
         return redirect()->route('companies.index')->with('success','Registro actualizado satisfactoriamente');
       
     }

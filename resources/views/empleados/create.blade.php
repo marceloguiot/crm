@@ -33,7 +33,7 @@
                     <div class="form-group"  style="margin-top:15px">
                       <label for="correo">Correo electrónico</label>
                       <input type="email" name="correo" class="form-control" id="correo" placeholder="Correo electrónico"
-                       value="{{old('correo')}}" required />
+                       value="{{old('correo')}}" />
                     @if ($errors->has('correo'))
                     <div class="error">{{ $errors->first('correo') }}</div>
                     @endif
@@ -41,7 +41,7 @@
                     <div class="form-group"  style="margin-top:15px">
                       <label for="telefono">Teléfono</label>
                       <input type="text" name="telefono" class="form-control" id="telefono" placeholder="Teléfono"
-                       value="{{old('telefono')}}" required />
+                       value="{{old('telefono')}}" />
                     @if ($errors->has('telefono'))
                     <div class="error">{{ $errors->first('telefono') }}</div>
                     @endif

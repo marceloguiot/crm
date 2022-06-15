@@ -18,8 +18,8 @@
                       <label for="name"> Nombre</label>
                       <input type="text" name="nombre" class="form-control" id="name" placeholder="Nombre de la compañia"
                        value="{{old('nombre')}}" required />
-                    @if ($errors->has('name'))
-                    <div class="error">{{ $errors->first('name') }}</div>
+                    @if ($errors->has('nombre'))
+                    <div class="error">{{ $errors->first('nombre') }}</div>
                     @endif
                     </div>
                     
@@ -27,16 +27,16 @@
                       <label for="emil">Correo electrónico</label>
                       <input type="email" name="correo" class="form-control" id="email" placeholder="Correo electrónico"
                        value="{{old('correo')}}" required />
-                    @if ($errors->has('email'))
-                    <div class="error">{{ $errors->first('email') }}</div>
+                    @if ($errors->has('correo'))
+                    <div class="error">{{ $errors->first('correo') }}</div>
                     @endif
                     </div>
                     <div class="form-group"  style="margin-top:15px">
                       <label for="emil">Página web</label>
                       <input type="text" name="pagina" class="form-control" id="website" placeholder="Página web"
                        value="{{old('pagina')}}" required />
-                    @if ($errors->has('website'))
-                    <div class="error">{{ $errors->first('website') }}</div>
+                    @if ($errors->has('pagina'))
+                    <div class="error">{{ $errors->first('pagina') }}</div>
                     @endif
                     </div>
                     
